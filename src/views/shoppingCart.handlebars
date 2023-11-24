@@ -1,0 +1,129 @@
+{{> header}}
+<div class="container" style="margin-top: 30px;">
+    <div style="margin: 30px auto; text-align: center;">
+        <h1>GIỎ HÀNG CỦA TÔI</h1>
+    </div>
+    {{#if products}}
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card wish-list mb-3">
+                <div class="card-body">
+                    <h5 class="mb-4">Giỏ hàng (<span>{{session.cart.totalQty}}</span> sản phẩm)</h5>
+                    {{#each products}}
+                    <div class="row mb-4">
+                        <div class="col-md-5 col-lg-3 col-xl-3">
+                            <div class="view zoom overlay z-depth-1 rounded mb-3 mb-md-0">
+                                <a href="/products/{{this.item._id}}">
+                                <img class="img-fluid w-100" src="/img/{{this.item.img}}" alt="Sample">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-lg-9 col-xl-9">
+                            <div>
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <a href="/products/{{this.item._id}}" style="text-decoration: none; color: black">
+                                        <h5>{{this.item.title}}</h5>
+                                        </a>
+                                        <p class="mb-3 text-muted text-uppercase small">Giá: 
+                                        {{#if this.item.salePrice}}
+                                        <small><del>{{this.item.price}} VND</del></small> 
+                                        <span class="sale-price">{{this.item.salePrice}} VND</span></p>
+                                        {{else}}
+                                        {{this.item.price}} VND
+                                        {{/if}}
+                                        <p class="mb-2 text-muted text-uppercase small">Loại: {{this.item.type}}</p>
+                                        <p class="mb-3 text-muted text-uppercase small">Thương hiệu: {{this.item.brand}}</p>
+                                    </div>
+                                    <div>
+                                        <h5 style="text-align: center">Số lượng</h5>
+                                        <p class="mb-3 text-uppercase " style="text-align: center; font-weight: bold;">{{this.qty}}</p>
+                                        <small id="passwordHelpBlock" class="form-text text-muted text-center">
+                                            (Ghi chú, {{this.qty}} sản phẩm)
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <a href="/products/add-to-cart/remove/{{this.item._id}}" type="button" style="color: brown;"
+                                            class="card-link-secondary small text-uppercase mr-3"><i
+                                                class="fas fa-trash-alt mr-1" ></i> Xóa sản phẩm </a>
+                                    </div>
+                                    <p class="mb-0"><span><strong>{{this.price}} VND</strong></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                    <hr class="mb-4">
+                    <p class="text-primary mb-0" ><i class="fas fa-info-circle mr-1"></i> Vui lòng không trì hoãn việc thanh toán, thêm các sản phẩm vào giỏ hàng không có nghĩa bạn đã đặt hàng.</p>
+
+                </div>
+            </div>
+            <!-- Card -->
+
+            <!-- Card -->
+            <div class="card mb-3">
+                <div class="card-body">
+
+                    <h5 class="mb-4">Phương thức thanh toán được chấp nhận</h5>
+
+                    <img class="mr-2" width="45px"
+                        src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
+                        alt="Visa">
+                    <img class="mr-2" width="45px"
+                        src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
+                        alt="American Express">
+                    <img class="mr-2" width="45px"
+                        src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
+                        alt="Mastercard">
+                </div>
+            </div>
+            <!-- Card -->
+
+        </div>
+        <div class="col-lg-4">
+
+            <!-- Card -->
+            <div class="card mb-3">
+                <div class="card-body">
+
+                    <h5 class="mb-3">Tổng giá trị sản phẩm</h5>
+
+                    <ul class="list-group list-group-flush">
+                        <li
+                            class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                            Giá trị tạm tính
+                            <span><strong>{{totalPrice}} VND</strong></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                            Vận chuyển
+                            <span>Miễn phí vận chuyển</span>
+                        </li>
+                        <li
+                            class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                            <div>
+                                <strong>Tổng giá trị sản phẩm</strong>
+                                <strong>
+                                    <p class="mb-0">(bao gồm VAT)</p>
+                                </strong>
+                            </div>
+                            <span><strong>{{totalPrice}} VND</strong></span>
+                        </li>
+                    </ul>
+                    <a href="/user/checkout" style="text-decoration: none;">
+                    <button type="button" class="btn btn-dark btn-block waves-effect waves-light">THANH TOÁN</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {{else}}
+    <hr>
+    <div style="margin: 50px auto; text-align: center; color: gray">
+        <h2>Không có sản phẩm nào trong giỏ hàng</h2>
+    </div>
+    {{/if}}
+</div>
+{{> footer}}

@@ -1,0 +1,71 @@
+{{> header}}
+<div class="container create-form">
+    <h3>Thêm sản phẩm</h3>
+    <form method="POST" action="/admin/store">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="title">Tên sản phẩm</label>
+                <input type="text" class="form-control" name="title" placeholder="Nhập tên sản phẩm">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="brand">Tên thương hiệu</label>
+                <input type="text" class="form-control" name="brand" placeholder="Nhập tên thương hiệu">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="type">Loại sản phẩm</label>
+            <input type="text" class="form-control" name="type" placeholder="VD: Serum, Cleansing, Moisturisers , ... ">
+        </div>
+        <div class="form-group">
+            <label for="qty">Số lượng sản phẩm</label>
+            <input type="text" class="form-control" name="qty" placeholder="Nhập số lượng sản phẩm">
+        </div>
+        <div class="form-group">
+            <label for="price">Giá sản phẩm</label>
+            <input type="text" class="form-control" name="price" placeholder="Nhập giá sản phẩm (Đơn vị: VND)">
+        </div>
+        <div class="form-group">
+            <label for="salePrice">Giá khuyến mãi</label>
+            <input type="text" class="form-control" name="salePrice" placeholder="Nhập giá sản phẩm (Đơn vị: VND)">
+        </div>
+        <div class="form-group">
+                <label for="img">Ảnh sản phẩm</label>
+                <input type="file" class="form-control-file" id="img" name="img">
+        </div>
+        <div class="form-group">
+            <label for="tag">Thẻ</label>
+            <input type="text" class="form-control" name="tag" placeholder="Nhập tên thẻ">
+        </div>
+        <div class="form-group">
+            <label for="main_detail_title">Tiêu đề chính</label>
+            <input type="text" class="form-control" name="main_detail_title" placeholder="Nhập tiêu đề  ">
+        </div>
+        <div class="form-group">
+    <label for="main_detail_description">Mô tả chính</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="main_detail_description"placeholder="Nhập mô tả sản phẩm "></textarea>
+  </div>
+        <div class="form-group">
+            <label for="main_detail_feature">Chức năng</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="main_detail_feature"placeholder="Thêm các chức năng của sản phẩm"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="sub_detail_title"> Tiêu đề phụ </label>
+            <input type="text" class="form-control" name="sub_detail_title"placeholder=" Nhập tiêu đề  ">
+        </div>
+        <div class="form-group">
+            <label for="sub_detail_description">Mô tả phụ</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="sub_detail_description"placeholder="Nhập mô tả sản phẩm"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="sub_detail_feature">Chức năng</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="sub_detail_feature"placeholder="Nhập các chức năng của sản phẩm"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="sub_detail_2">Thêm thông tin chi tiết</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="sub_detail_2"></textarea>
+        </div>
+        <button type="submit" class="btn btn-dark">Tạo sản phẩm</button>
+    </form>
+
+</div>
+{{> footer}}
