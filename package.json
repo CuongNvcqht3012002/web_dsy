@@ -1,14 +1,19 @@
 {
-  "name": "web_sad",
+  "name": "web_say",
   "version": "1.0.0",
+  "description": "A brief description of your Node.js web application.",
   "main": "src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "node-sass --watch src/scss/app.scss src/public/css/app.css",
     "start": "nodemon src/server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com"
+  },
   "keywords": [],
-  "author": "",
+  "author": "DSY",
   "license": "ISC",
   "devDependencies": {
     "node-sass": "^5.0.0",
@@ -33,6 +38,5 @@
     "passport": "^0.4.1",
     "passport-facebook": "^3.0.0",
     "passport-local": "^1.0.0"
-  },
-  "description": ""
+  }
 }
