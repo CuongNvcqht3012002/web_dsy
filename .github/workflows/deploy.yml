@@ -81,6 +81,8 @@ jobs:
             cd /home/web_dsy
             git checkout main
             git pull origin main
+            yarn dc:prod
+            docker system prune -a -f
             exit
 
   # cleanup:

@@ -11,7 +11,7 @@ const passport = require("passport");
 const flash = require("connect-flash");
 
 const app = express();
-const PORT = process.env.PORT || 6000;
+const PORT = process.env.PORT || 5002;
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -65,15 +65,15 @@ app.set("views", path.join(__dirname, "views"));
 async function startServer() {
   try {
     await mongoose.connect(
-      "mongodb://localhost:27017/web_ISD",
+      process.env.MONGO_URI || "mongodb://localhost:27017/web_ISD",
       { useUnifiedTopology: true, useNewUrlParser: true },
-      () => console.log("connect to Mongodb")
+      () => console.log("Connected to MongoDB")
     );
-    app.listen(PORT, '0.0.0.0', () => {
+    app.listen(PORT, () => {
       console.log(`Server running at ${PORT}`);
     });
   } catch (err) {
-    console.log("Connect failure!!!");
+    console.log("Connection failure:", err);
   }
 }
 startServer();

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "node-sass --watch src/scss/app.scss src/public/css/app.css",
-    "start": "nodemon src/server.js"
+    "start": "nodemon src/server.js",
+    "dc:prod": "docker compose -f docker-compose.yml --env-file .env up -d --build"
   },
   "repository": {
     "type": "git",
