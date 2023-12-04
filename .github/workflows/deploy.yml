@@ -78,7 +78,7 @@ jobs:
           username: ${{ secrets.VM_USERNAME }}
           password: ${{ secrets.VM_PASSWORD }}
           script: |
-            cd /home/web-dsy
+            cd /home/web_dsy
             git checkout main
             git pull origin main
             exit
