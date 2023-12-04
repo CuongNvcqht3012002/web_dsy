@@ -69,8 +69,9 @@ async function startServer() {
       { useUnifiedTopology: true, useNewUrlParser: true },
       () => console.log("connect to Mongodb")
     );
-    await app.listen(PORT);
-    console.log(`Server running at ${PORT}`);
+    app.listen(PORT, '0.0.0.0', () => {
+      console.log(`Server running at ${PORT}`);
+    });
   } catch (err) {
     console.log("Connect failure!!!");
   }
